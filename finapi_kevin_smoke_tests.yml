@@ -10,7 +10,7 @@ resources:
             - main
 
 variables:
-  - group: LogAnalyticsSecret
+  - group: LogAnalyticsSecrets
 
 pool:
   name: student-lab-pool
