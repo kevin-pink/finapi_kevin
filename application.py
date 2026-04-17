@@ -40,6 +40,7 @@ def delete_price():
 
 # ----------- Client Valuation -----------
 
+
 @app.route('/high-cpu')
 def high_cpu():
     import math
