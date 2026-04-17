@@ -41,6 +41,16 @@ def delete_price():
 # ----------- Client Valuation -----------
 
 
+@app.route("/api/client-valuation", methods=["GET"])
+def client_valuation():
+    valuations = [
+        {"ClientCode": "C001", "ClientName": "John Doe", "TotalValuation": 100000.00},
+        {"ClientCode": "C002", "ClientName": "Jane Smith", "TotalValuation": 150000.00}
+    ]
+    return jsonify(valuations)
+
+# ----------- Portfolio CRUD -----------
+
 @app.route('/high-cpu')
 def high_cpu():
     import math
@@ -63,16 +73,6 @@ def high_memory():
     data = ['x' * 1024 * 1024] * 500  # ~500MB in-memory array
     time.sleep(5)
     return f"Allocated {len(data)} MB of memory temporarily."
-
-@app.route("/api/client-valuation", methods=["GET"])
-def client_valuation():
-    valuations = [
-        {"ClientCode": "C001", "ClientName": "John Doe", "TotalValuation": 100000.00},
-        {"ClientCode": "C002", "ClientName": "Jane Smith", "TotalValuation": 150000.00}
-    ]
-    return jsonify(valuations)
-
-# ----------- Portfolio CRUD -----------
 
 @app.route("/api/portfolio", methods=["POST"])
 def create_portfolio():
